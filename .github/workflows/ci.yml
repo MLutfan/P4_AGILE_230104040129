@@ -1,29 +1,36 @@
-name: Node.js CI (Lint + Test)
+name: ci
 
 on:
   push:
-    branches: [ main ]
+    branches: ["***"]
   pull_request:
-    branches: [ main ]
+    branches: ["***"]
+
+permissions:
+  contents: read
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: "18"
+          cache: "npm"
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install deps
+        run: npm ci
 
-      - name: Lint OpenAPI file
-        run: npx @stoplight/spectral-cli lint openapi/api.yaml
+      - name: Lint OpenAPI (Spectral)
+        run: npm run lint:api
 
-      - name: Run tests
-        run: npm test
+      - name: Type-check (TypeScript)
+        run: npm run typecheck
+
+      - name: Run tests (Jest)
+        run: npx jest --ci --runInBand
