@@ -1,6 +1,6 @@
 # Praktikum #4: Agile E-Commerce API (Orders & Notifications)
 
-[![CI Status](https://github.com/MLutfan/P4-AGILE-Kel2/actions/workflows/ci.yml/badge.svg)](https://github.com/MLutfan/P4-AGILE-Kel2/actions/workflows/ci.yml)
+[![ci](https://github.com/MLutfan/P4_AGILE_230104040129/actions/workflows/ci.yml/badge.svg)](https://github.com/MLutfan/P4_AGILE_230104040129/actions/workflows/ci.yml)
 
 Repositori ini adalah implementasi dari Praktikum #4 Web Service Engineering. Proyek ini membangun sebuah **Mini E-Commerce API** (layanan Pesanan & Notifikasi) menggunakan pendekatan **Agile** dan alur kerja **Design-First** berbasis kontrak **OpenAPI**.
 
