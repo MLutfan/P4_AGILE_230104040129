@@ -6,14 +6,15 @@
   "scripts": {
     "lint:api": "spectral lint openapi/api.yaml",
     "typecheck": "tsc -p . --noEmit",
-    "test": "jest --runInBand",
-    "dev:orders": "tsx services/order-service/src/index.ts",
-    "dev:notif": "tsx services/notification-service/src/index.ts"
+    "test": "jest --config jest.config.cjs --runInBand",
+    "dev:orders": "tsx services/order-service/src/server.ts",
+    "dev:notif": "tsx services/notification-service/src/server.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "express-rate-limit": "^8.1.0",
     "helmet": "^8.1.0",
@@ -31,6 +32,7 @@
     "@types/supertest": "^2.0.16",
     "eslint": "^8.57.0",
     "jest": "^29.7.0",
+    "pino-pretty": "^13.1.2",
     "supertest": "^6.3.4",
     "ts-jest": "^29.2.5",
     "tsx": "^4.16.0",

@@ -1,0 +1,14 @@
+﻿HTTP/1.1 200 OK
+X-Powered-By: Express
+x-correlation-id: 3069cdb0-2650-4c58-bb72-e3173ee1f4e8
+X-RateLimit-Limit: 120
+X-RateLimit-Remaining: 119
+Date: Mon, 20 Oct 2025 13:27:07 GMT
+X-RateLimit-Reset: 1760966888
+Content-Type: application/json; charset=utf-8
+Content-Length: 133
+ETag: W/"85-HKAeRVZgINsfM8Rku7m6DpsSyis"
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[{"id":"n1","type":"ORDER_CREATED","message":"Order created successfully","createdAt":"2025-10-20T13:27:07.974Z"}],"total":1}

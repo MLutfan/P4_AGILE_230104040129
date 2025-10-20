@@ -1,0 +1,14 @@
+﻿HTTP/1.1 201 Created
+X-Powered-By: Express
+x-correlation-id: demo-123
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+Date: Mon, 20 Oct 2025 13:14:48 GMT
+X-RateLimit-Reset: 1760966149
+Content-Type: application/json; charset=utf-8
+Content-Length: 114
+ETag: W/"72-oFpvbfLDELHdjT0h6Mj00Z3lmv8"
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"id":"b08e9794-2b61-404d-869f-b4a58a8832f7","productId":"P1","quantity":2,"createdAt":"2025-10-20T13:14:48.857Z"}
