@@ -1,0 +1,192 @@
+openapi: 3.0.3
+info:
+  title: Mini E-Commerce API
+  version: 1.0.0
+  description: >
+    Kontrak API untuk praktikum #4 (Orders & Notifications).
+    Pola: API-first → Mock → Test → Implement.
+  contact:
+    name: Praktikum Web Service Engineering
+    url: https://example.edu/wse
+    email: wse-praktikum@example.edu
+
+servers:
+  - url: http://localhost
+
+# Tambahan untuk hilangkan warning "operation-tag-defined"
+tags:
+  - name: Orders
+    description: Endpoint terkait pembuatan dan pengelolaan pesanan.
+  - name: Notifications
+    description: Endpoint terkait daftar notifikasi sistem.
+
+paths:
+  /orders:
+    post:
+      tags: [Orders]
+      operationId: createOrder
+      summary: Create order
+      description: Membuat pesanan baru (in-memory untuk praktikum).
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrder'
+            examples:
+              valid:
+                summary: Payload valid
+                value:
+                  productId: "P1"
+                  quantity: 2
+      responses:
+        '201':
+          description: Created
+          headers:
+            x-correlation-id:
+              description: ID korelasi untuk tracing request
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+              examples:
+                created:
+                  value:
+                    id: "o-123"
+                    productId: "P1"
+                    quantity: 2
+                    createdAt: "2025-10-16T03:21:34.000Z"
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /notifications:
+    get:
+      tags: [Notifications]
+      operationId: listNotifications
+      summary: List notifications
+      description: Mengembalikan daftar notifikasi terbaru.
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - name: limit
+          in: query
+          description: Batas jumlah item yang dikembalikan
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 10
+      responses:
+        '200':
+          description: OK
+          headers:
+            x-correlation-id:
+              description: ID korelasi untuk tracing request
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Notification'
+                  total:
+                    type: integer
+              examples:
+                sample:
+                  value:
+                    data:
+                      - id: "n1"
+                        type: "ORDER_CREATED"
+                        message: "Order created successfully"
+                        createdAt: "2025-10-16T03:21:34.000Z"
+                    total: 1
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  responses:
+    BadRequest:
+      description: Validation error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            badPayload:
+              value:
+                message: "ValidationError"
+                code: "BAD_REQUEST"
+
+    Unauthorized:
+      description: Missing/invalid bearer token
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            noToken:
+              value:
+                message: "Unauthorized"
+                code: "UNAUTH"
+
+  schemas:
+    CreateOrder:
+      type: object
+      required: [productId, quantity]
+      properties:
+        productId:
+          type: string
+          minLength: 1
+        quantity:
+          type: integer
+          minimum: 1
+
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+        productId:
+          type: string
+        quantity:
+          type: integer
+          minimum: 1
+        createdAt:
+          type: string
+          format: date-time
+
+    Notification:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum: [ORDER_CREATED]
+        message:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: string

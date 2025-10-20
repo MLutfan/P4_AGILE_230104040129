@@ -1,0 +1,26 @@
+﻿HTTP/1.1 400 Bad Request
+x-correlation-id: 74595972-3c84-471a-bc84-75375fc6f61d
+Content-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+Origin-Agent-Cluster: ?1
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Content-Type-Options: nosniff
+X-DNS-Prefetch-Control: off
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-XSS-Protection: 0
+RateLimit-Policy: 60;w=60
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 60
+Content-Type: application/json; charset=utf-8
+Content-Length: 50
+ETag: W/"32-Az/hPRhKITD/cfMl8u5JNu2ap20"
+Date: Mon, 20 Oct 2025 05:59:34 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"message":"ValidationError","code":"BAD_REQUEST"}

@@ -1,0 +1,13 @@
+﻿HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: *
+x-correlation-id: string
+Content-type: application/json
+Content-Length: 133
+Date: Mon, 20 Oct 2025 05:40:11 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[{"id":"n1","type":"ORDER_CREATED","message":"Order created successfully","createdAt":"2025-10-16T03:21:34.000Z"}],"total":1}

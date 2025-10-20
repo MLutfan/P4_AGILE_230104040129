@@ -1,0 +1,40 @@
+{
+// tsconfig: simple & modern for Node 18+, Express, Jest, tsx
+"compilerOptions": {
+  /* Platform & module system */
+  "target": "ES2022",
+  "module": "commonjs",
+  "moduleResolution": "node",
+  "lib": ["ES2022"],
+
+  /* Interop & DX */
+  "esModuleInterop": true,
+  "resolveJsonModule": true,
+  "types": ["node", "jest"],
+
+  /* Strictness & safety */
+  "strict": true,
+  "forceConsistentCasingInFileNames": true,
+  "noUncheckedIndexedAccess": true,
+  "skipLibCheck": true,
+  "isolatedModules": true,
+
+  /* Output (boleh diabaikan saat dev dengan tsx, tapi berguna untuk build) */
+  "outDir": "dist",
+  "sourceMap": true,
+
+  /* Declarations off (lebih cepat untuk app; nyalakan jika mau publish library) */
+  "declaration": false
+},
+
+/* Ruang kerja praktikum kita */
+"include": [
+  "utils.ts",
+  "services/**/*.ts",
+  "**/*.spec.ts"
+],
+"exclude": [
+  "node_modules",
+  "dist"
+]
+}

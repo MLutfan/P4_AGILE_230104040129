@@ -1,0 +1,22 @@
+﻿HTTP/1.1 401 Unauthorized
+x-correlation-id: 091eb91c-7f20-4df4-8ff8-3bc1f39e82a4
+Content-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+Origin-Agent-Cluster: ?1
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Content-Type-Options: nosniff
+X-DNS-Prefetch-Control: off
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-XSS-Protection: 0
+Content-Type: application/json; charset=utf-8
+Content-Length: 42
+ETag: W/"2a-+J/XpMgTejh2RSpr2WhcO8Jh/+4"
+Date: Mon, 20 Oct 2025 05:58:40 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"message":"Unauthorized","code":"UNAUTH"}

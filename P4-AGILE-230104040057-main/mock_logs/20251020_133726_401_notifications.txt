@@ -1,0 +1,13 @@
+﻿HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: *
+sl-violations: [{"location":["request"],"severity":"Error","code":401,"message":"Invalid security scheme used"}]
+Content-type: application/json
+Content-Length: 42
+Date: Mon, 20 Oct 2025 05:41:27 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"message":"Unauthorized","code":"UNAUTH"}

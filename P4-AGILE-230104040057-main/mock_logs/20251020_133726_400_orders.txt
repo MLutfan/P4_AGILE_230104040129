@@ -1,0 +1,13 @@
+﻿HTTP/1.1 400 Bad Request
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: *
+sl-violations: [{"location":["request","body","quantity"],"severity":"Error","code":"minimum","message":"Request body property quantity must be >= 1"}]
+Content-type: application/json
+Content-Length: 50
+Date: Mon, 20 Oct 2025 05:42:29 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"message":"ValidationError","code":"BAD_REQUEST"}
