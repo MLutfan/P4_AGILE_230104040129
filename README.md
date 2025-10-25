@@ -5,7 +5,7 @@
 **Team 2**
 * Muhammad Lutfan (Project Manager)
 * Husni Majedi
-* Aisyah Safitri
+* Aisyah Safitri :D
 * Husna Norgina
 * Mahdalina
 
