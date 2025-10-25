@@ -3,11 +3,12 @@
 [![ci](https://github.com/MLutfan/P4_AGILE_230104040129/actions/workflows/ci.yml/badge.svg)](https://github.com/MLutfan/P4_AGILE_230104040129/actions/workflows/ci.yml)
 
 **Team 2**
-* Muhammad Lutfan.
-* Husni Majedi.
-* Aisyah Safitri.
-* Husna Norgina.
-* Mahdalina.
+* Muhammad Lutfan (Project Manager)
+* Husni Majedi
+* Aisyah Safitri
+* Husna Norgina
+* Mahdalina
+
 
 Repositori ini adalah implementasi dari Praktikum #4 Web Service Engineering. Proyek ini membangun sebuah **Mini E-Commerce API** (layanan Pesanan & Notifikasi) menggunakan pendekatan **Agile** dan alur kerja **Design-First** berbasis kontrak **OpenAPI**.
 
